@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><Gem xmlns="GemNS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="GemNS Gems.xsd">
+    <gems>
+        <gem id="g1">
+            <Name>Emerald</Name>
+            <Value>0.61</Value>
+            <Origin>Columbia</Origin>
+            <Preciousness>precious</Preciousness>
+            <VisualParameters>
+                <Color>green</Color>
+                <Transparency>50</Transparency>
+                <FacesNumber>18</FacesNumber>
+            </VisualParameters>
+        </gem>
+        <gem id="g2">
+            <Name>Garnet</Name>
+            <Value>0.52</Value>
+            <Origin>Tanzania</Origin>
+            <Preciousness>precious</Preciousness>
+            <VisualParameters>
+                <Color>Red</Color>
+                <Transparency>20</Transparency>
+                <FacesNumber>30</FacesNumber>
+            </VisualParameters>
+        </gem>
+        <gem id="g3">
+            <Name>Tourmaline</Name>
+            <Value>1.29</Value>
+            <Origin>Brasilia</Origin>
+            <Preciousness>precious</Preciousness>
+            <VisualParameters>
+                <Color>pink</Color>
+                <Transparency>60</Transparency>
+                <FacesNumber>50</FacesNumber>
+            </VisualParameters>
+        </gem>
+        <gem id="g4">
+            <Name>Jasper</Name>
+            <Value>36</Value>
+            <Origin>Madagascar</Origin>
+            <Preciousness>semiprecious</Preciousness>
+            <VisualParameters>
+                <Color>brown</Color>
+                <Transparency>0</Transparency>
+                <FacesNumber>8</FacesNumber>
+            </VisualParameters>
+        </gem>
+        <gem id="tss">
+            <Name>Gagg</Name>
+            <Value>1.2</Value>
+            <Origin>Ukraine</Origin>
+            <Preciousness>precious</Preciousness>
+            <VisualParameters>
+                <Color>red</Color>
+                <Transparency>12</Transparency>
+                <FacesNumber>15</FacesNumber>
+            </VisualParameters>
+        </gem>
+
+    <gem id="pon"><Name>Diamond</Name><Value>500</Value><Origin>Nigeria</Origin><Preciousness>precious</Preciousness><VisualParameters><Color>White</Color><Transparency>100</Transparency><FacesNumber>150</FacesNumber></VisualParameters></gem></gems>
+</Gem>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="GemNS"
+        xmlns="GemNS"
+        elementFormDefault="qualified">
+
+    <xs:element name="Gem">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="gems">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="gem" type="Gem" maxOccurs="unbounded" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:simpleType name="name">
+        <xs:restriction base="xs:string" />
+    </xs:simpleType>
+
+    <xs:simpleType name="value">
+        <xs:restriction base="xs:float" />
+    </xs:simpleType>
+
+    <xs:simpleType name="facesNumber">
+        <xs:restriction base="xs:positiveInteger" />
+    </xs:simpleType>
+
+    <xs:simpleType name="color">
+        <xs:restriction base="xs:string" />
+    </xs:simpleType>
+
+    <xs:simpleType name="transparency">
+        <xs:restriction base="xs:nonNegativeInteger" />
+    </xs:simpleType>
+
+    <xs:simpleType name="preciousness" >
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="precious" />
+            <xs:enumeration value="semiprecious" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="origin">
+        <xs:restriction base="xs:string" />
+    </xs:simpleType>
+
+    <xs:complexType name="Gem">
+        <xs:sequence>
+            <xs:element name="Name" type="name"></xs:element>
+            <xs:element name="Value" type="value"></xs:element>
+            <xs:element name="Origin" type="origin"></xs:element>
+            <xs:element name="Preciousness" type="preciousness"></xs:element>
+
+            <xs:element name="VisualParameters">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Color" type="color"></xs:element>
+                        <xs:element name="Transparency" type="transparency"></xs:element>
+                        <xs:element name="FacesNumber" type="facesNumber"></xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:ID" use="required"/>
+    </xs:complexType>
+
+</xs:schema>
