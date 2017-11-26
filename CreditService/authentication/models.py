@@ -22,15 +22,9 @@ class Profile(models.Model):
         verbose_name=_('Is user blocked in system'),
         default=False
     )
-    balance = models.DecimalField(
-        default=0,
-        decimal_places=2,
-        max_digits=10,
-        verbose_name=_('Balance')
-    )
 
     def __str__(self):
-        return '{} | balance: {}'.format(self.user.username, self.balance)
+        return '{} | active: {}'.format(self.user.username, not self.is_blocked)
 
 
 @receiver(post_save, sender=User)
