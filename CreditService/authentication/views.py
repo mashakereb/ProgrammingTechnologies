@@ -122,3 +122,9 @@ class SignUpFormView(TemplateView):
     Render sign up form
     """
     template_name = 'sign_up_form.html'
+
+class HomeView(TemplateView):
+    """
+    Render sign up form
+    """
+    template_name = 'index.html'
