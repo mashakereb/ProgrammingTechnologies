@@ -80,7 +80,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'authentication.apps.AuthenticationConfig',
+    'authentication',
+    'finance',
     'rest_framework',
     'drf_generators',
 ]
@@ -149,8 +150,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 AUTHENTICATION_BACKENDS = ['django.contrib.auth.backends.ModelBackend']
 
-LOGIN_REDIRECT_URL = '/home'
-
+LOGIN_REDIRECT_URL = '/cards'
+LOGIN_URL = '/login'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
