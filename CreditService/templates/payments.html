@@ -1,0 +1,79 @@
+{% extends 'index.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block links %}
+<link rel="stylesheet" type="text/css" href='{% static "css/payments.css" %}'>
+{% endblock %}
+
+{% block info %}
+<div class="container">
+    {% if message %}
+    <div class="alert alert-success">
+        ${message}
+    </div>
+    {% endif %}
+
+    {% if payments %}
+    <table class="table table-hover">
+        <thead class="thead-inverse">
+        <tr>
+            <td>#</td>
+            <td>{% trans 'Type' %}</td>
+            <td>{% trans 'Amount' %}</td>
+            <td>{% trans 'Date' %}</td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for payment in payments %}
+        <tr class="{{payment.type}}">
+            <td width="20%">{{payment.id}}</td>
+            <td width="20%">{{payment.type}}</td>
+            <td width="20%">{{payment.amount}}</td>
+            <td width="20%">{{payment.created}}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+    {% else %}
+
+    <br>
+    <div class="alert alert-info">
+        {% trans 'No payments found' %}
+    </div>
+    {% endif %}
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    {% if account and not account.is_blocked %}
+    <div class="wrapper-left">
+        <form class="form-signin nav-left" action="/payment/{{account.id}}" method="post" width="20%">
+            {% csrf_token %}
+
+            <select name="type" id="type" class="form-control" required="true" data-live-search="true">
+                <option value="Withdrawal">{% trans 'Withdrawal' %}</option>
+                <option value="Deposit">{% trans 'Deposit' %}</option>
+            </select>
+
+            <input type="number" class="form-control" name="amount" placeholder="{% trans 'Amount' %}" required=""/>
+            <input type="hidden" class="form-control" name="account" value="{{account.id}}" required=""/>
+
+            {% if form.errors %}
+                {% for error in form.errors %}
+                <div class="msg-error">{% trans error %}</div>
+                {% endfor %}
+            {% endif %}
+
+            <button class="btn btn-lg btn-primary btn-block" type="submit">{% trans 'Create payment' %}</button>
+        </form>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
+
+

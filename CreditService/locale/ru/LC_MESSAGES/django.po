@@ -1,0 +1,156 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-27 16:22+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: CreditService/settings.py:170
+msgid "English"
+msgstr "English"
+
+#: CreditService/settings.py:171
+msgid "Russian"
+msgstr "Русский"
+
+#: authentication/errors.py:3
+msgid "Data is invalid"
+msgstr "Данные не валидны"
+
+#: authentication/errors.py:4
+msgid "Such username already exists!"
+msgstr "Пользователь с таким менем уже существует!"
+
+#: authentication/models.py:15
+msgid "User"
+msgstr "Пользователь"
+
+#: authentication/models.py:22
+msgid "Is user blocked in system"
+msgstr "Заблокирован ли счёт в системе"
+
+#: finance/errors.py:3
+msgid "Insufficient funds "
+msgstr "Недостаточно средств"
+
+#: finance/models.py:21 templates/cards.html:22
+msgid "Number"
+msgstr "Номер"
+
+#: finance/models.py:26
+msgid "Expiration date"
+msgstr "Срок действия"
+
+#: finance/models.py:48 templates/cards.html:23
+msgid "Balance"
+msgstr "Баланс"
+
+#: finance/models.py:52
+msgid "Is the account blocked for financial transactions"
+msgstr "Заблокирован ли счёт для финансовых транзакций?"
+
+#: finance/models.py:58
+msgid "CreditCard"
+msgstr "Кредитная карта"
+
+#: finance/models.py:73 templates/cards.html:24 templates/payments.html:22
+msgid "Type"
+msgstr "Тип"
+
+#: finance/models.py:87
+msgid "Payment date"
+msgstr "Дата платежа"
+
+#: templates/cards.html:25
+msgid "Payments"
+msgstr "Платежи"
+
+#: templates/cards.html:26
+msgid "Block account"
+msgstr "Заблокировать счёт"
+
+#: templates/cards.html:46
+msgid "Blocked"
+msgstr "Заблокирован"
+
+#: templates/cards.html:59
+msgid "No accounts found"
+msgstr "Не найдено ни одного счёта"
+
+#: templates/index.html:35
+msgid "Cards"
+msgstr "К списку карт"
+
+#: templates/index.html:36
+msgid "Log out"
+msgstr "Выйти"
+
+#: templates/index.html:40 templates/registration/signup.html:24
+msgid "Sign Up"
+msgstr "Зарегистрироваться"
+
+#: templates/index.html:41 templates/registration/login.html:21
+msgid "Sign In"
+msgstr "Войти"
+
+#: templates/index.html:53
+msgid "Credit System"
+msgstr "Кредитная Система"
+
+#: templates/payments.html:23 templates/payments.html:63
+msgid "Amount"
+msgstr "Размер"
+
+#: templates/payments.html:24
+msgid "Date"
+msgstr "Дата"
+
+#: templates/payments.html:44
+msgid "No payments found"
+msgstr "Пока нет ни одного платежа"
+
+#: templates/payments.html:59
+msgid "Withdrawal"
+msgstr "Списание"
+
+#: templates/payments.html:60
+msgid "Deposit"
+msgstr "Поступление"
+
+#: templates/payments.html:72
+msgid "Create payment"
+msgstr "Сделать платёж"
+
+#: templates/registration/login.html:13 templates/registration/signup.html:16
+msgid "Email Address"
+msgstr "Электронная почта"
+
+#: templates/registration/login.html:14 templates/registration/signup.html:17
+msgid "Password"
+msgstr "Пароль"
+
+#: templates/registration/signup.html:13
+msgid "First Name"
+msgstr "Имя"
+
+#: templates/registration/signup.html:14
+msgid "Last Name"
+msgstr "Фамилия"
+
+#~ msgid "Info"
+#~ msgstr "Информация"
