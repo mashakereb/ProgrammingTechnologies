@@ -12,5 +12,6 @@ urlpatterns = [
 
     url(r'^i18n/', include('django.conf.urls.i18n')),
     url(r'^', include('authentication.urls'), name='home'),
+    url(r'^', include('finance.urls'), name='finance')
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
   + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
