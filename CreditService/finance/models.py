@@ -1,6 +1,5 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
-from ..authentication.models import Profile
 
 from django.db.models.signals import post_save
 from django.dispatch import receiver
@@ -17,7 +16,7 @@ class CreditCard(models.Model):
     )
 
     number = models.DecimalField(
-        max_digits=12,
+        max_digits=16,
         decimal_places=0,
         verbose_name=_('Number'),
         unique=True
@@ -31,9 +30,14 @@ class CreditCard(models.Model):
         choices=CardTypes
     )
     profile = models.ForeignKey(
-        Profile,
+        'authentication.Profile',
         related_name='cards',
     )
+
+    @property
+    def str_number(self):
+        str_number = str(self.number)
+        return '-'.join([str_number[i:i+4] for i in range(0, 13, 4)])
 
 
 class Account(models.Model):
@@ -77,6 +81,11 @@ class Payment(models.Model):
     account = models.ForeignKey(
         Account,
         related_name="payments",
+    )
+
+    created = models.DateTimeField(
+        verbose_name=_('Payment date'),
+        auto_now=True
     )
 
 
