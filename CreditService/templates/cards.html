@@ -1,0 +1,65 @@
+{% extends 'index.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block links %}
+
+{% endblock %}
+
+{% block info %}
+<div class="container">
+    {% if message %}
+    <div class="alert alert-success">
+        ${message}
+    </div>
+    {% endif %}
+
+    {% if cards %}
+    <table class="table table-hover">
+        <thead class="thead-inverse">
+        <tr>
+            <td>#</td>
+            <td>{% trans 'Number' %}</td>
+            <td>{% trans 'Balance' %}</td>
+            <td>{% trans 'Type' %}</td>
+            <td>{% trans 'Payments' %}</td>
+            <td>{% trans 'Block account' %}</td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for card in cards %}
+
+        <tr class="info">
+            <td width="15%">{{card.id}}</td>
+            <td width="20%">{{card.str_number}}</td>
+            <td width="20%">{{card.account.balance}}</td>
+            <td width="15%">{{card.type}}</td>
+            <td width="10%"><a href="\payments\{{card.account.id}}">
+                <span class="glyphicon glyphicon-folder-open"/>
+            </a></td>
+            <td width="10%">
+                {% if not card.account.is_blocked %}
+                <a href="\account\block\{{card.account.id}}">
+                    <span class="glyphicon glyphicon-remove-sign"/>
+                </a>
+                {% else %}
+                <span>{% trans 'Blocked' %}</span>
+
+                {% endif %}
+            </td>
+
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+    {% if not cards %}
+    <br>
+    <div class="alert alert-info">
+        {% trans 'No accounts found' %}
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
+
+
