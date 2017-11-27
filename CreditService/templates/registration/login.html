@@ -7,15 +7,18 @@
 {% endblock %}
 
 {% block info %}
-    <div class="wrapper">
+<div class="wrapper">
     <form class="form-signin" action="." method="post">{% csrf_token %}
-        <h3 class="form-signin-heading">Please Sign In</h3>
 
-        <input type="text" class="form-control" name="username" placeholder="Email Address" required="" autofocus=""/>
-        <input type="password" class="form-control" name="password" placeholder="Password" required=""/>
+        <input type="text" class="form-control" name="username" placeholder="{% trans 'Email Address' %}" required="" autofocus=""/>
+        <input type="password" class="form-control" name="password" placeholder="{% trans 'Password' %}" required=""/>
 
-          {% if  form.errors %}<div class="msg-error">{{ from.errors }}</div>{% endif %}
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign In</button>
+        {% if form.non_field_errors %}
+        {% for error in form.non_field_errors %}
+        <div class="msg-error">{% trans error %}</div>
+        {% endfor %}
+        {% endif %}
+        <button class="btn btn-lg btn-primary btn-block" type="submit">{% trans 'Sign In' %}</button>
     </form>
 </div>
 {% endblock %}
